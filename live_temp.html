@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- <link rel="stylesheet" type="text/css" href="css/LogInMessage.css" /> -->
+<!-- <script type="text/javascript" src="jwplayer.js"></script> -->
+<script type="text/javascript" src="js/jwplayer674/jwplayer.js"></script>
+<!-- <script src="http://jwpsrv.com/library/DO_OPACPEeWsRRJtO5t17w.js"></script> -->
+<!-- <script type="text/javascript" src="http://www.princeton.edu/WebMedia/flash/player/jwplayer.js"></script> -->
+</head>
+<body>
+<div id="queueLogContainer">
+<!--     <div id="infoi"><a class="navbtn" id="1_a"><i class="fa fa-video-camera fa-fw"></i></a></div> -->
+    <div id="infoiRefresh"><a class="navbtn" id="refreshVideo"><i class="fa fa-refresh fa-fw"></i></a></div>
+<!--     <div id="infoi"><a class="navbtn" id="refreshVideo"><i class="fa fa-refresh fa-fw"></i></a></div> -->
+    <!-- <div align="center" id="queueLogMessage"> -->
+    <!-- <div id="videoObject"></div> -->
+    <video id="videoObject" preload autoplay webkit-playsinline></video>
+        <script type="text/javascript">
+            // var player = document.getElementById("videoObject");
+            // var play = document.getElementById("play");
+            // // play.addEventListener("click", function(){
+            //     player.play();
+            // // });
+
+            jwplayer("videoObject").setup({
+                height: 262,
+                width: 640,
+                autostart: "true",
+                // controls: "false",
+                mute: true,
+                androidhls: true,
+                image: "img/RGDX7.png",
+                // controlbar: "over",
+                controlbar: "over",
+                'wmode' : 'transparent',
+                androidhls: true,
+                playlist: [{
+                        sources: [{
+                            // file: "rtmp://puwowzalive.princeton.edu/pppl/flv:experiment.flv",
+                            file: "http://puwowzalive.princeton.edu:1935/pppl/experiment1/playlist.m3u8",
+                            image: "img/RGDX7.png",
+                            autostart: true
+                        },
+                        {
+                            // type: "flash",
+                            provider: "rtmp",
+                            file: "rtmp://puwowzalive.princeton.edu/pppl/flv:experiment1.flv",
+                            controls: "false",
+                            // image: "img/RGDX7.png",
+                            // <switch>
+                            //   <video src="rtmp://puwowzalive.princeton.edu/pppl/flv:experiment2.flv" system-bitrate="1000000"/>
+                            //   <video src="rtmp://puwowzalive.princeton.edu/pppl/flv:experiment1.flv" system-bitrate="500000"/>
+                            // </switch>
+                            autostart: true,
+                            mute: true,
+                            rtmp: {
+                                bufferlength: 0.2
+                            },
+                            // file: "http://puwowzalive.princeton.edu:1935/pppl/experiment/playlist.m3u8"
+                        }]
+                }],
+                    primary: "flash"
+
+                // playlist: [{
+                //         sources: [
+                //             { type: "flash",
+                //               src: "http://www.princeton.edu/WebMedia/flash/player/player56.swf",
+                //               config: {
+                //                 file: "experiment",
+                //                 streamer: "rtmp://puwowzalive.princeton.edu/pppl",
+                //                 // streamer: "rtmp://puwowzalive1.princeton.edu/pppl/",
+                //                 provider: "rtmp",
+                //                 autostart: "true",
+                //                 bufferlength: 0.2,
+                //               }
+                //             },
+                //             { type: "html5",
+                //               config: {
+                //                 file: "http://puwowzalive.princeton.edu:1935/pppl/experiment/playlist.m3u8",
+                //                 autostart: "true",
+                //                 // mute: true,
+                //                 // androidhls: true,
+                //                     // file: "rtmp://puwowzalive.princeton.edu/pppl/mp4:experiment.mp4",
+                //                 }
+                //             },
+                //         ]
+                //     }]
+                //     primary: "flash",
+            });
+
+            // var VideoObject = document.getElementsbyID[0];
+            // $.on{ VideoObject.play ; $ .attr ; };
+
+            // jwplayer("videoObject").setup({
+            //     playlist: [{
+            //         image: "/images/RGDX7.jpg",
+            //         sources: [{ 
+            //             // file: "rtmp://example.com/application/mp4:myVideo.mp4"
+            //             file: "http://puwowzalive.princeton.edu:1935/pppl/experiment/playlist.m3u8"
+            //         }}]
+            //     }],
+            //     height: 360,
+            //     width: 640
+            // });
+
+            $('#refreshVideo').click(function(e){
+                $(".vidcontainer").load("./live.html");
+            });
+        </script>
+        <!-- <img src="images/live.png" alt="Live"> -->
+    <!-- </div> -->
+
+
+<object classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000' width='470' height='320' id='single1' name='single1'>
+<param name='movie' value='http://player.longtailvideo.com/player.swf'>
+<param name='allowfullscreen' value='true'>
+<param name='allowscriptaccess' value='always'>
+<param name='wmode' value='transparent'>
+<param name='flashvars' value='image=http://content.longtailvideo.com/videos/flvplayer.jpg&file=http://content.longtailvideo.com/videos/flvplayer.flv&controlbar.idlehide=true&controlbar=over&duration=34&fullscreen=true&stretching=fill'>
+<embed
+  id='single2'
+  name='single2'
+  src='http://player.longtailvideo.com/player.swf'
+  width='470'
+  height='320'
+  bgcolor='#000000'
+  allowscriptaccess='always'
+  allowfullscreen='true'
+  flashvars='image=http://content.longtailvideo.com/videos/flvplayer.jpg&file=http://content.longtailvideo.com/videos/flvplayer.flv&controlbar.idlehide=true&controlbar=over&duration=34&fullscreen=true&stretching=fill'
+/>
+</object>
+
+
+</div>
+</body>
+</html>

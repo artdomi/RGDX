@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http -equiv="X-UA-Compatible" content="IE=edge">
+        <title>RGDX Online LAB</title>
+        <meta name="description" content="">
+        <meta http-equiv="x-dns-prefetch-control" content="off">
+        <meta name="viewport" content="width=1140" />
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> -->
+        <link rel="stylesheet" href="css/normalize.css">
+        <!-- <link rel="shortcut icon" href="favicon.ico" /> -->
+        <link rel="icon" type="image/png" href="favicon.png"/>
+        <link REL="apple-touch-icon" HREF="/apple-touch-icon.png"/>
+        <link rel="stylesheet" href="css/timeout-dialog.css" media="screen, projection" />
+        <link rel="stylesheet" href="css/font-awesome-4.4.0/css/font-awesome.min.css"/>
+        <link rel="stylesheet" href="css/main.css"/>
+        <link rel="stylesheet" href="js/katex/katex.min.css">
+        <link href='http://fonts.googleapis.com/css?family=Kite+One' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Offside' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    <script src="js/katex/katex.min.js"></script>
+        <!-- // <script src="js/vendor/modernizr-2.6.2.min.js"></script> -->
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+            <header>
+                <div class="headercontainer">
+                    <div class="headerleft">
+                        <div class="ppplcontainer">
+                            <a href="http://www.pppl.gov" target="_blank"><img src="./img/LOGO_PPPL9.png" alt="PPPL_logo"
+                                style="max-width:100%;max-height:70%" align="right"></a>
+                        </div>
+                    </div>
+                    <div class="headermain">
+                        <!-- RGDX Online Lab -->
+                    </div>
+                    <div class="headerright">
+                        <a href="#" class="LevelTab">Level 1</a>
+                        <a href="#" class="LevelTab2">Level 2</a>
+                    </div>
+                </div>
+            </header>
+
+            <div class="container">
+                <div class="leftcolumn">
+
+                    <nav>
+                        <ul id="nav">
+                          <li><a><i class="fa fa-info-circle fa-fw" style="font-size: 35px;position: relative; top: 5px;"></i> Introduction</a>
+                            <ul>
+                              <li><a class="navbtn" id="1_a"><i class="fa fa-angle-right fa-fw"></i> What am I looking at?</a></li>
+                              <li><a class="navbtn" id="1_b"><i class="fa fa-angle-right fa-fw"></i> How can I make it glow?</a></li>
+                              <li><a class="navbtn" id="1_c"><i class="fa fa-angle-right fa-fw"></i> What is <span style="color:#ff6a02;">PLASMA?</span></a></li>
+                              <li><a class="navbtn" id="1_d"><i class="fa fa-angle-right fa-fw"></i> Why does the plasma glow?</a></li>
+                            </ul>
+                          </li>
+                          <li><a><i class="fa fa-question-circle fa-fw" style="font-size: 35px;position: relative; top: 5px;"></i> Controls</a>
+                            <ul>
+                              <li><a class="navbtn" id="1_e" style="color:#90b769; height:30px;"><i class="fa fa-angle-right fa-fw"></i> Pressure</a></li>
+                              <li><a class="navbtn" id="1_f" style="color:#93bed4; height:30px;"><i class="fa fa-angle-right fa-fw"></i> Electrode voltage</a></li>
+                              <li><a class="navbtn" id="1_g" style="color:#f8685c; height:30px;"><i class="fa fa-angle-right fa-fw"></i> Electromagnets</a></li>
+                            </ul>
+                          </li>
+                          <li><a><i class="fa fa-check-square fa-fw" style="font-size: 35px;position: relative; top: 5px;"></i> Tasks</a>
+                            <ul>
+                              <li><a class="navbtn" id="1_h"><i class="fa fa-angle-right fa-fw"></i> What does the electromagnet do to the plasma?</a></li>
+                              <li><a class="navbtn" id="1_i"><i class="fa fa-angle-right fa-fw"></i> At what voltage does it glow?</a></li>
+                            </ul>
+                          </li>
+                        </ul>
+                    </nav>
+                <div class="devlog">
+
+
+                </div> <!-- Message Log -->
+                </div>
+                <div class="maincolumn">
+
+                    <section class="vidcontainer" id="videodiv"></section>
+
+                    <section class="controlcontainer" id="controls" data-refresh='-1' data-getcode='0'></section> <!-- NO CONTROLS YET -->
+
+                    <section class="contentcontainer" id="content"></section>
+
+                </div>
+                <div class="rightcolumn">
+                    <div id="PosInfo"></div>
+                    <div id="PosInfo2"></div>
+
+                    <section id="Status">
+                        <div class="StatusInfo">
+                        </div>
+                        <div class="ButtonsLeft">
+                            <a class="SignOut" href="#">Quit <i class="fa fa-sign-out fa-fw"></i></a>
+                        </div>
+                    </section>
+
+                    <section id="MessageHolder" data-messageID='-1' class='StatusMessage'></section>
+
+                    <section class="QueueHolder"></section>
+
+                </div>
+            </div>
+            <div id="push"></div>
+        <footer role="contentinfo">
+        <!-- <footer > -->
+            <div class="footerContainer">
+                <div class="footerSectionMain">
+                    <p>Have suggestions or comments? Let us know @ <a class=fineNotice href="mailto:rgdx@pppl.gov">rgdx@pppl.gov</a></p>
+                    <p class="finefont">© 2015 Princeton Plasma Physics Laboratory. All rights reserved.</p>
+                </div>
+                <!-- <div class="PrincetonLogo"> -->
+                <div class="footerSections">
+                    <a href="http://www.princeton.edu" target="_blank">
+                        <img src="./img/LOGO_PRINCETON.png" alt="Princeton_logo" height="70">
+                    </a>
+                    <!--Princeton Plasma Physics Laboratory
+                        P.O. Box 451
+                        Princeton, NJ 08543-0451
+                        GPS: 100 Stellarator Road
+                        Princeton, NJ, 08540
+                        (609) 243-2000 -->
+                </div>
+                <div class="footerSections">
+                    <a href="http://energy.gov" target="_blank">
+                       <img src="./img/LOGO_DOE.png" alt="Princeton_logo" height="70"></a>
+                    <!-- Princeton Plasma Physics Laboratory is a U.S. Department of Energy national laboratory managed by Princeton University. -->
+                </div>
+            </div>
+        </footer>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+        <!-- // <script src="js/jquery-ui.min.js"></script> -->
+        <script async src="js/timeout-dialog.js"></script>
+        <script async src="js/jquery.noty.packaged.min.js"></script>
+        <script async src="js/main.js"></script>
+        <script type="text/javascript" src="http://content.jwplatform.com/libraries/RIrW8fxk.js"></script>
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            // (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            // function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            // e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            // e.src='//www.google-analytics.com/analytics.js';
+            // r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            // ga('create','UA-XXXXX-X');ga('send','pageview');
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-48643638-1']);
+            _gaq.push(['_trackPageview']);
+            (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; 
+            ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- <script type="text/javascript" src="js/jwplayer674/jwplayer.js"></script> -->
+<!-- <script type="text/javascript" src="js/jwplayer612/jwplayer.js"></script>592 -->
+<!-- <script type="text/javascript" src="js/jwplayer7/jwplayer.js"></script> -->
+<!-- <script type="text/javascript" src="http://content.jwplatform.com/libraries/RIrW8fxk.js"></script> -->
+<!-- <script type="text/javascript" src="http://www.princeton.edu/WebMedia/flash/player/jwplayer.js"></script> --> <!--  -->
+</head>
+<body>
+<div id="queueLogContainer">
+    <div id="infoiRefresh"><a class="navbtn" id="refreshVideo"><i class="fa fa-refresh fa-fw"></i></a></div>
+    <video id="videoObject" preload autoplay webkit-playsinline></video>
+        <script type="text/javascript">
+            $( document ).ready(function() {
+            jwplayer("videoObject").setup({
+                height: 262,
+                width: 640,
+                autostart: "true",
+                // controls: "false",
+                mute: true,
+                androidhls: true,
+                image: "img/RGDX7.png",
+                controlbar: "over",
+                'wmode' : 'transparent',
+                androidhls: true,
+                playlist: [{
+                        sources: [{
+                            file: "http://puwowzalive.princeton.edu:1935/pppl/experiment1/playlist.m3u8",
+                            image: "img/RGDX7.png",
+                            autostart: true
+                        },
+                        {
+                            provider: "rtmp",
+                            file: "rtmp://puwowzalive.princeton.edu/pppl/flv:experiment1.flv",
+                            controls: "false",
+                            autostart: true,
+                            mute: true,
+                            // rtmp: {
+                            //     bufferlength: 0.2
+                            // },
+                        }]
+                }],
+                    primary: "flash"
+            });
+            $('#refreshVideo').click(function(e){
+            $(".vidcontainer").load("./live.html");
+            });
+        });
+        </script>
+</div>
+</body>
+</html>

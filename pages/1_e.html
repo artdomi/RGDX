@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<body>
+<article>
+	<h1 class="content-h1">What is pressure and how do I control it?</h1>
+	<h2 class="content-h2">What is pressure?</h2>
+	<p>As you saw in "What am I looking at?",
+	the gas inside the RGDX is air which
+	is composed primarily of nitrogen and oxygen molecules.</br>
+	But they&apos;re not standing still...as a matter of fact each particle is moving
+	in a random direction at around <a href="http://www.dummies.com/how-to/content/
+	using-the-kinetic-energy-formula-to-predict-air-mo.html"
+	target="_blank">1,000 mph</a>!</br></br>
+	</p>
+	<div style="height:200px;clear:both">
+		<div class="left" style="width:320px;margin-top:30px">
+			<p>As the molecules hit the glass, the glass exerts a force and they bounce back.  The larger the area of glass you look at, the more molecules are hitting it and the more net force is exerted.  Therefore, we talk about the the net force <em>divided</em> by the area.  This is the <b>pressure</b>.</p>
+		</div>
+		<div class="right">
+			<img src="./img/pressure.jpg" alt="pressure" style="width:250px">
+		</div>
+    </div>
+    <div style="height:350px;clear:both">
+	    <div class="left" style="margin-top:25px">
+        	<img src="./img/torricelli.jpg" alt="torricelli" style="width:200px">
+        </div>
+		<div class="right" style="width:380px;margin-top:0px">
+			<p>At sea level, the weight of all the air in the atmosphere leads to an air
+			pressure of around 760 Torr (Torr is a unit of pressure, named after the
+			scientist <a href="http://en.wikipedia.org/wiki/Evangelista_Torricelli"
+			target="_blank">
+			Evangelista Torricelli</a> who was among the first to measure
+			atmospheric pressures).<br><br>
+			By connecting a <a href="http://en.wikipedia.org/wiki/Rotary_vane_pump"
+			 target="_blank">vacuum pump</a>, some molecules are removed from the
+			 tube.  The fewer molecules there are inside hitting the glass,
+			the lower the pressure.  Using the pump, we can reach pressures
+			of about 8 milliTorr (mTorr) or 100,000 lower than atmospheric pressure.
+			</p>
+        </div>
+    </div>
+    <div style="margin-left:100px;marign-right:100px">
+    	<img src="./img/vacuum_pump_diagram.png" alt="vacuum_pump_diagram" style="width:440px" >
+    </div>
+    <br>
+	<hr>
+	<h2 class="content-h2">How do we control the pressure of the RGDX?</h2>
+	<p>The RGDX vacuum system is shown below:</p>
+        <div>
+            <img src="./img/vacuum_system.jpg" alt="vacuum_system" style="width:100%">
+        </div>
+        <p><b>Manometer:</b>  It measures the pressure in the vessel and <em>tells</em>
+		the MKS controller.  This model has a 0-1000 mTorr range.<br><br>
+		<b>Vacuum Pump:</b> A vane mechanical pump capable of lowering the pressure in
+		the vessel to approximately 8 mTorr.<br><br>
+		<b>Shutoff Valve:</b>  Manual valve which can be used to stop airflow
+		if needed.  Normally kept open.<br><br>
+		<b>Needle Valve:</b> Remote controlled valve.  The flow is controlled by the
+		MKS controller.<br><br>
+		<b>MKS Controller:</b>  Connected to the computer.  When you set the pressure
+		the controller detects the current pressure from
+		the manometer and opens or closes the needle valve to reach the desired pressure.<br>
+		</p>
+		<br>
+		<p>You may notice a couple of things:</p>
+		<p><b>Once you set a given pressure, the reading typically overshoots:</b><br>
+		This makes sense since the controller reacts to the live reading of
+		the manometer.  Just give it some time to stabilize.</p><br>
+		<p><b>It takes a long time to reach the lowest pressures:</b><br>
+		For the low pressures, the needle valve is closed and the pressure is limited
+		by the strength of the pump.  Don&apos;t expect to go below approximately
+		8 mTorr, the pump simply can&apos;t reach such low pressures.</p>
+		<p>With this you should be all set with using the pressure control.  Have fun!</p>
+		</div>
+	</div>
+</div>
+</body>
+</html>

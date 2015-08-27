@@ -1,0 +1,167 @@
+/* Some default button styles */
+button {font-size: 100%; margin: 0; vertical-align: baseline; vertical-align: middle;}
+button {line-height: normal; overflow: visible;}
+button {cursor: pointer; -webkit-appearance: button;}
+
+button {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border: 1px solid #cccccc;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 1px 1px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 1px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 1px 1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  display: inline-block;
+  font-size: 20px;
+  line-height: normal;
+  /*margin: 0px auto;*/
+  padding: 5px 5px;
+  /*text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);*/
+}
+
+.button:hover, button:hover {
+  text-decoration: none;
+}
+
+.button:focus, button:focus {
+  -webkit-box-shadow: 0 0px 2px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0 0px 2px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0px 2px rgba(0, 0, 0, 0.4);
+  outline: none;
+}
+
+
+/* Timeout Dialog Styles */
+.timeout-dialog {
+  padding: 7px;
+  position: absolute;
+  /*background: #252525 url("../images/timeout-icon.png") no-repeat 15px 25px;*/
+  background: #252525;
+  /*border: 1px solid #ffffff;*/
+  -webkit-box-shadow: 0 0px 5px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 0px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0px 5px rgba(0, 0, 0, 0.5);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  opacity: 0.9;
+  color: #ffffff;
+  text-align: center;
+  /*margin: 0 auto;*/
+}
+.timeout-dialog .ui-dialog-title {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 100;
+  font-size: 24px;
+  /*font-weight: bold;*/
+  display: block;
+  padding: 0 0 15px 0;
+  /*margin-left: 80px;*/
+  /*opacity: 0.7;*/
+}
+.timeout-dialog .ui-dialog-titlebar-close {
+  display: none;
+}
+.timeout-dialog .ui-dialog-buttonpane {
+  margin-top: 15px;
+}
+.timeout-dialog  ~ .ui-widget-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #000;
+  filter: alpha(opacity=60);
+  -khtml-opacity: 0.6;
+  -moz-opacity: 0.6;
+  opacity: 0.6;
+}
+.timeout-dialog p {
+  margin: 0 0 5px 0px;
+}
+#timeout-keep-signin-btn {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 100;
+  color: #000000;
+  background-color: #404040;
+  background-image:url('../images/person3.png');
+  background-position: 10px 0px;
+  padding-top: 140px;
+  height:170px;
+  width:175px;
+  /*background-repeat: repeat-x;*/
+/*  background-image: -khtml-gradient(linear, left top, left bottom, from(#377bb2), to(#0f5895));
+  background-image: -moz-linear-gradient(top, #377bb2, #0f5895);
+  background-image: -ms-linear-gradient(top, #377bb2, #0f5895);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #377bb2), color-stop(100%, #0f5895));
+  background-image: -webkit-linear-gradient(top, #377bb2, #0f5895);
+  background-image: -o-linear-gradient(top, #377bb2, #0f5895);
+  background-image: linear-gradient(top, #377bb2, #0f5895);*/
+/*  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#377bb2', endColorstr='#0f5895', GradientType=0);*/
+  /*text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);*/
+  /*border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);*/
+  color: #f6f6f6;
+  text-shadow: none;
+  /*margin: 0px auto;*/
+  margin: 5px 10px 5px 4px;
+}
+#timeout-keep-signin-btn:hover {
+  background-color: #4b4b4b;
+}
+
+#timeout-sign-out-button {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 100;
+  background-color: #404040;
+  background-image:url('../images/robot3.png');
+  background-position: 10px 0px;
+  padding-top: 140px;
+  height: 170px;
+  width: 175px;
+  /*background-repeat: repeat-x;
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#ffffff), to(#e6e6e6));
+  background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -ms-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #e6e6e6));
+  background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: linear-gradient(top, #ffffff, #e6e6e6);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e6e6e6', GradientType=0);*/
+  /*text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);*/
+  /*border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);*/
+  color: #f6f6f6;
+  text-shadow: none;
+  /*margin: 0px auto;*/
+  margin: 0px 0px 0px 7px;
+  /*margin: 5px 0;*/
+}
+#timeout-sign-out-button:hover {
+  background-color: #4b4b4b;
+}
+
+#timeout-countdown {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 100;
+  font-weight: normal;
+  font-size: 28px;
+  color: #ff6d00;
+}
+
+#timeout-message {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 100;
+  font-weight: normal;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+#timeout-question {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 100;
+  font-weight: normal;
+  font-size: 18px;
+  color: #ffffff;
+}
+
