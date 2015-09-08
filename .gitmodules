@@ -1,0 +1,6 @@
+[submodule "highcharts/editablegrid"]
+	path = highcharts/editablegrid
+	url = https://github.com/webismymind/editablegrid.git
+[submodule "highcharts/lmfit.js"]
+	path = highcharts/lmfit.js
+	url = https://github.com/jvail/lmfit.js.git
