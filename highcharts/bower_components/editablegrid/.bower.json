@@ -1,0 +1,14 @@
+{
+  "name": "editablegrid",
+  "homepage": "https://github.com/webismymind/editablegrid",
+  "_release": "b5f4917d5d",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "b5f4917d5d8cd1e849c8041c9a6897936b70b69d"
+  },
+  "_source": "https://github.com/webismymind/editablegrid.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/webismymind/editablegrid.git",
+  "_direct": true
+}
