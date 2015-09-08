@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>EditableGrid - Minimal demo - Attaching grid to an HTML table</title>
+		
+		<script src="./editablegrid/editablegrid.js"></script>
+		<!-- [DO NOT DEPLOY] --> <script src="./editablegrid/editablegrid_renderers.js" ></script>
+		<!-- [DO NOT DEPLOY] --> <script src="./editablegrid/editablegrid_editors.js" ></script>
+		<!-- [DO NOT DEPLOY] --> <script src="./editablegrid/editablegrid_validators.js" ></script>
+		<!-- [DO NOT DEPLOY] --> <script src="./editablegrid/editablegrid_utils.js" ></script>
+		<!-- [DO NOT DEPLOY] --> <script src="./editablegrid/editablegrid_charts.js" ></script>
+		<link rel="stylesheet" href="./editablegrid/editablegrid.css" type="text/css" media="screen">
+		
+		<style>
+			body { font-family:'lucida grande', tahoma, verdana, arial, sans-serif; font-size:11px; }
+			h1 { font-size: 15px; }
+			a { color: #548dc4; text-decoration: none; }
+			a:hover { text-decoration: underline; }
+			table.testgrid { border-collapse: collapse; border: 1px solid #CCB; width: 800px; }
+			table.testgrid td, table.testgrid th { padding: 5px; border: 1px solid #E0E0E0; }
+			table.testgrid th { background: #E5E5E5; text-align: left; }
+			input.invalid { background: red; color: #FDFDFD; }
+		</style>
+		
+		<script>
+			window.onload = function() {
+              editableGrid = new EditableGrid("DemoGridAttach", { sortIconUp: "./editablegrid/examples/attach/up.png", sortIconDown: "./editablegrid/examples/attach/down.png"}); 
+
+				// we build and load the metadata in Javascript
+				editableGrid.load({ metadata: [
+					{ name: "dataset", datatype: "integer", editable: true },
+					{ name: "voltage", datatype: "double(V,,dot,,)", editable: true },
+					{ name: "pressure", datatype: "double(mTorr,,dot,,)", editable: true },
+					{ name: "distance", datatype: "double(cm,,dot,,)", editable: true },
+					{ name: "p x d", datatype: "double(mTorrxcm,,dot,,)", editable: true }
+				]});
+
+				// then we attach to the HTML table and render it
+				editableGrid.attachToHTMLTable('htmlgrid');
+				editableGrid.renderGrid();
+			} 
+		</script>
+		
+	</head>
+	
+	<body>
+		<h1>EditableGrid - Minimal Demo - Attaching grid to an HTML table</h1>
+		<table id="htmlgrid" class="testgrid">
+			<tr>
+				<th>Data Set</th>
+				<th>Voltage</th>
+				<th>Pressure</th>
+				<th>Distance</th>
+				<th>p x d</th>
+			</tr>
+			<tr id="R1">
+				<td>1</td>
+				<td>2000</td>
+				<td>100</td>
+				<td>30.5</td>
+				<td></td>
+			</tr>
+			<tr id="R2">
+				<td>2</td>
+				<td>1500</td>
+				<td>200</td>
+				<td>30</td>
+				<td></td>
+			</tr>
+		</table>
+	</body>
+	
+</html>
