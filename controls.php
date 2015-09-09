@@ -365,7 +365,8 @@ if ($fgmembersite->CheckValidUser()) {
             draggable: (Superuser == 1) ? true : false,
             dragBoundFunc: function(pos) {
                       return {
-                        x: (pos.x < 150) ? (150) : ((pos.x > 500) ? 500 : pos.x),
+                        // x: (pos.x < 150) ? (150) : ((pos.x > 500) ? 500 : pos.x),
+                        x: (pos.x < CTRLS[3].x) ? (CTRLS[3].x) : ((pos.x > CTRLS[3].x+CTRLS[3].w) ? CTRLS[3].x+CTRLS[3].w : pos.x),
                         y: this.getAbsolutePosition().y
                       }
                     },
