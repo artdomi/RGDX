@@ -38,7 +38,7 @@
 <!-- <link rel="stylesheet" type="text/css" href="css/styles.css"> -->
 <!-- <link rel="stylesheet" type="text/css" href="css/table.css"> -->
 <!-- <link rel="stylesheet" href="css/timeout-dialog.css" type="text/css" media="screen, projection" /> -->
-<link rel="stylesheet" href="font-awesome-4.0.3/css/font-awesome.min.css">
+<link rel="stylesheet" href="./css/font-awesome-4.4.0/css/font-awesome.min.css">
 </head>
 <body>
 

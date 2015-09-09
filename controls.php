@@ -223,6 +223,8 @@ if ($fgmembersite->CheckValidUser()) {
             draggable: (Superuser.value == 1) ? true : false,
             dragBoundFunc: function(pos) {
               return {
+                // x : pos.x,
+                // y : pos.y
                 x: (pos.x < CTRLS[4].x) ? (CTRLS[4].x) : ((pos.x > CTRLS[4].x+CTRLS[4].w) ? CTRLS[4].x+CTRLS[4].w : pos.x),
                 y: this.getAbsolutePosition().y
                 // x: (pos.x < 130) ? (130) : ((pos.x > 450) ? 450 : pos.x),
@@ -366,8 +368,11 @@ if ($fgmembersite->CheckValidUser()) {
             dragBoundFunc: function(pos) {
                       return {
                         // x: (pos.x < 150) ? (150) : ((pos.x > 500) ? 500 : pos.x),
-                        x: (pos.x < CTRLS[3].x) ? (CTRLS[3].x) : ((pos.x > CTRLS[3].x+CTRLS[3].w) ? CTRLS[3].x+CTRLS[3].w : pos.x),
-                        y: this.getAbsolutePosition().y
+                        // x: (pos.x < CTRLS[3].x) ? (CTRLS[3].x) : ((pos.x > CTRLS[3].x+CTRLS[3].w) ? CTRLS[3].x+CTRLS[3].w : pos.x),
+                        x:pos.x,
+                        y:pos.y
+                        // x: this.getAbsolutePosition().x,
+                        // y: this.getAbsolutePosition().y
                       }
                     },
             stroke: '#9d9d9d',
