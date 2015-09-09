@@ -364,7 +364,7 @@ if ($fgmembersite->CheckValidUser()) {
             offset: {x: 5, y: 45},
             fill : '#b8b8b8',
             opacity : 1,
-            draggable: (Superuser == 1) ? true : false,
+            draggable: (Superuser.value == 1) ? true : false,
             dragBoundFunc: function(pos) {
                       return {
                         // x: (pos.x < 150) ? (150) : ((pos.x > 500) ? 500 : pos.x),
