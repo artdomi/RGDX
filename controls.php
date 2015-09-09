@@ -576,7 +576,7 @@ if ($fgmembersite->CheckValidUser()) {
             oldtime = newtime;
             time_changing += timediff;
 
-            if 
+            
 
             // if ((changing == 1) && (time_changing >= 500)) {
             if (time_changing >= 500) {
