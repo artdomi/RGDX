@@ -673,12 +673,13 @@ if ($fgmembersite->CheckValidUser()) {
                 if (plasmaopacity > 1) plasmaopacity = 1;
                 lightUpPlasma = Photodiode.value > 7 && lights.value == 0
                 videoLayer.find('#plasma').opacity( (lightUpPlasma ? plasmaopacity : 0));
-                if lightUpPlasma {
-                    if !justOnce {
-                        console.log("V= " + Electrode.value + " P= " + Pressure.value + " D= " + MoveElectrode.valueRead);
-                        justOnce = true;
-                    }
-                } else lightUpPlasma = false;
+                alert(lightUpPlasma)
+                // if lightUpPlasma {
+                //     if !justOnce {
+                //         console.log("V= " + Electrode.value + " P= " + Pressure.value + " D= " + MoveElectrode.valueRead);
+                //         justOnce = true;
+                //     }
+                // } else lightUpPlasma = false;
                 // console.log(Photodiode.value);
                 // videoLayer.find('#rgdxLive').fill( (Photodiode.value > 10 ? 'pink' : 'white'));
                 videoLayer.batchDraw();
