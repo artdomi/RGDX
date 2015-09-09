@@ -676,7 +676,7 @@ if ($fgmembersite->CheckValidUser()) {
                 // alert(lightUpPlasma)
                 if (lightUpPlasma) {
                     if (!justOnce) {
-                        console.log("V= " + Electrode.value + " P= " + Pressure.value + " D= " + MoveElectrode.valueRead);
+                        alert("V= " + Electrode.value + " P= " + Pressure.value + " D= " + MoveElectrode.valueRead);
                         justOnce = true;
                     }
                 } else lightUpPlasma = false;
