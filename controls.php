@@ -679,7 +679,7 @@ if ($fgmembersite->CheckValidUser()) {
                         alert("V= " + Electrode.value + " P= " + Pressure.value + " D= " + MoveElectrode.valueRead);
                         justOnce = true;
                     }
-                } else lightUpPlasma = false;
+                } else justOnce = false;
                 console.log(Photodiode.value);
                 videoLayer.find('#rgdxLive').fill( (Photodiode.value > 10 ? 'pink' : 'white'));
                 videoLayer.batchDraw();
