@@ -675,7 +675,7 @@ if ($fgmembersite->CheckValidUser()) {
                 videoLayer.find('#plasma').opacity( (lightUpPlasma ? plasmaopacity : 0));
                 // alert(lightUpPlasma)
                 if (lightUpPlasma) {
-                    if !(justOnce) {
+                    if (!justOnce) {
                         console.log("V= " + Electrode.value + " P= " + Pressure.value + " D= " + MoveElectrode.valueRead);
                         justOnce = true;
                     }
