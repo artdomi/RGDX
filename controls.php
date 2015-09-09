@@ -676,7 +676,7 @@ if ($fgmembersite->CheckValidUser()) {
                 // alert(lightUpPlasma)
                 if (lightUpPlasma) {
                     if (!justOnce) {
-                        alert("V= " + Electrode.value + " P= " + Pressure.value + " D= " + MoveElectrode.valueRead);
+                        if (Superuser.value == 1) alert("V= " + Electrode.value + " P= " + Pressure.value + " D= " + MoveElectrode.valueRead);
                         justOnce = true;
                     }
                 } else justOnce = false;
