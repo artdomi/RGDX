@@ -125,6 +125,7 @@ if ($fgmembersite->CheckValidUser()) {
     var Superuser = {value: <?PHP echo $Superuser;?>};
     // console.log('Superuser: ' + Superuser.value);
     var lightStrip = new Array();
+    var lightUpPlasma = false;
     //POSITION FOR THE CONTROLS
     CTRLS   = [{x: 10, y:30, w: 300, h: 60, text: 'Pressure (mTorr):', incr: 'true', comm: 'bi', style:"2", op:0.6, bg: "#dfdfdf", axis: 'log'}, //bg;
                {x: 330, y:30, w: 300, h: 60, text: 'Electromagnet (Gauss):',     incr: 'true', comm: 'mono', style:"2", op:0.6, bg: "#dfdfdf", axis: 'linear'},
@@ -575,6 +576,8 @@ if ($fgmembersite->CheckValidUser()) {
             oldtime = newtime;
             time_changing += timediff;
 
+            if 
+
             // if ((changing == 1) && (time_changing >= 500)) {
             if (time_changing >= 500) {
                 time_changing = 0;      //reset clock
@@ -667,7 +670,8 @@ if ($fgmembersite->CheckValidUser()) {
 
                 var plasmaopacity = Photodiode.value/10;
                 if (plasmaopacity > 1) plasmaopacity = 1;
-                videoLayer.find('#plasma').opacity( (Photodiode.value > 7 ? plasmaopacity*(1-lights.value) : 0));
+                lightUpPlasma = Photodiode.value > 7 && lights.value == 0
+                videoLayer.find('#plasma').opacity( (lightUpPlasma ? plasmaopacity : 0));
                 // console.log(Photodiode.value);
                 // videoLayer.find('#rgdxLive').fill( (Photodiode.value > 10 ? 'pink' : 'white'));
                 videoLayer.batchDraw();
