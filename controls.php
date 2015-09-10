@@ -131,7 +131,7 @@ if ($fgmembersite->CheckValidUser()) {
     CTRLS   = [{x: 10, y:30, w: 300, h: 60, text: 'Pressure (mTorr):', incr: 'true', comm: 'bi', style:"2", op:0.6, bg: "#dfdfdf", axis: 'log'}, //bg;
                {x: 330, y:30, w: 300, h: 60, text: 'Electromagnet (Gauss):',     incr: 'true', comm: 'mono', style:"2", op:0.6, bg: "#dfdfdf", axis: 'linear'},
                {x: 10, y:320, w: 500, h: 60, text: 'Electrode Voltage (Volts):', incr: 'true', comm: 'mono', style:"2", op:0.6, bg: "#dfdfdf", axis: 'linear'},
-               {x: 80, y:172, w: 420, text: 'Electrode Position (cm):'},
+               {x: 85, y:172, w: 420, text: 'Electrode Position (cm):'},
                {x: 80, y:120, w: 470, text: 'Electromagnet Position (cm):'},
                {x: 530, y:320, w: 100, h: 75, text: 'Lights', style:"1"}];
 
