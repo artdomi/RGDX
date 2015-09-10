@@ -429,6 +429,7 @@ if ($fgmembersite->CheckValidUser()) {
                 if (electrode_x > MoveElectrode.max) electrode_x = MoveElectrode.max;
                 if (electrode_x < MoveElectrode.min) electrode_x = MoveElectrode.min;
                 MoveElectrode.value = electrode_x;
+                realElectrode.value = realElectrode.max + (MoveElectrode.value - MoveElectrode.min) / (MoveElectrode.max - MoveElectrode.min) * (realElectrode.min -realElectrode.max)
             });
         }
         lightStrip.push( {x: 130, y: 225, name: 'lights'},
@@ -684,7 +685,7 @@ if ($fgmembersite->CheckValidUser()) {
                 // alert(lightUpPlasma)
                 if (lightUpPlasma) {
                     if (!justOnce) {
-                        if (Superuser.value == 1) alert("V= " + Electrode.value + " P= " + pressOut + " D= " + MoveElectrode.valueRead);
+                        if (Superuser.value == 1) alert("V= " + Electrode.value + " P= " + pressOut + " D= " + realElectrode.value);
                         justOnce = true;
                     }
                 } else justOnce = false;
