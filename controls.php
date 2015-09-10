@@ -112,9 +112,9 @@ if ($fgmembersite->CheckValidUser()) {
     var Electrode =     {value: 0,                  name: "Electrode",      min: 0, max: 2000, units: '', colour: '#63e7ff'};//6fb6ff //63e7ff
     var Electromagnet = {value: 0,                  name: "Electromagnet",  min: 0, max: 200 , units: '', colour: '#ffac8a'};//ff7575 //ffac8a
     var MoveElectrode = {value: 0.5, valueRead: 0.5,name: "MoveElectrode",  min: 0.5, max: 4.0 , units: '', colour: '#ffac8a'};//ff7575 //ffac8a
-    var realElectrode = {value: 76,                 name: "realElectrode",  min: 0.5, max: 4.0 , units: '', colour: '#ffac8a'};//ff7575 //ffac8a
+    var realElectrode = {value: 76,                 name: "realElectrode",  min: 0.5, max: 76 , units: '', colour: '#ffac8a'};//ff7575 //ffac8a
     var MoveHC =        {value: 0.5, valueRead: 0.5,name: "MoveHC",         min: 0.5, max: 4.0 ,   units: '', colour: '#ffac8a'};//ff7575 //ffac8a
-    var realHC =        {value: 5,                  name: "realHC",         min: 0.5, max: 4.0 ,  units: '', colour: '#ffac8a'};//ff7575 //ffac8a
+    var realHC =        {value: 5,                  name: "realHC",         min: 0.5, max: 50 ,  units: '', colour: '#ffac8a'};//ff7575 //ffac8a
     var Photodiode =    {value: 0,                  name: "Photodiode",     min: 0, max: 20 ,  units: '', colour: '#ffac8a'};//ff7575 //ffac8a
 
 
@@ -131,7 +131,7 @@ if ($fgmembersite->CheckValidUser()) {
     CTRLS   = [{x: 10, y:30, w: 300, h: 60, text: 'Pressure (mTorr):', incr: 'true', comm: 'bi', style:"2", op:0.6, bg: "#dfdfdf", axis: 'log'}, //bg;
                {x: 330, y:30, w: 300, h: 60, text: 'Electromagnet (Gauss):',     incr: 'true', comm: 'mono', style:"2", op:0.6, bg: "#dfdfdf", axis: 'linear'},
                {x: 10, y:320, w: 500, h: 60, text: 'Electrode Voltage (Volts):', incr: 'true', comm: 'mono', style:"2", op:0.6, bg: "#dfdfdf", axis: 'linear'},
-               {x: 80, y:172, w: 470, text: 'Electrode Position (cm):'},
+               {x: 500, y:172, w: 350, text: 'Electrode Position (cm):'},
                {x: 80, y:120, w: 470, text: 'Electromagnet Position (cm):'},
                {x: 530, y:320, w: 100, h: 75, text: 'Lights', style:"1"}];
 
@@ -357,8 +357,8 @@ if ($fgmembersite->CheckValidUser()) {
     function buildScene() {
 
         var electrode = new Konva.Rect({
-            x: 500,
-            y: 172,
+            x: CTRLS[3].x,
+            y: CTRLS[3].y,
             width: 10,
             height: 90,
             offset: {x: 5, y: 45},
@@ -367,8 +367,8 @@ if ($fgmembersite->CheckValidUser()) {
             draggable: (Superuser.value == 1) ? true : false,
             dragBoundFunc: function(pos) {
                       return {
-                        x: (pos.x < 150) ? (150) : ((pos.x > 500) ? 500 : pos.x),
-                        // x: (pos.x < CTRLS[3].x) ? (CTRLS[3].x) : ((pos.x > CTRLS[3].x+CTRLS[3].w) ? CTRLS[3].x+CTRLS[3].w : pos.x),
+                        // x: (pos.x < 150) ? (150) : ((pos.x > 500) ? 500 : pos.x),
+                        x: (pos.x < CTRLS[3].x) ? (CTRLS[3].x) : ((pos.x > CTRLS[3].x+CTRLS[3].w) ? CTRLS[3].x+CTRLS[3].w : pos.x),
                         // x:pos.x,
                         // y:pos.y
                         // x: this.getAbsolutePosition().x,
