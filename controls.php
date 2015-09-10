@@ -111,7 +111,7 @@ if ($fgmembersite->CheckValidUser()) {
     var Pressure =      {value: 10, valueRead: 0,    name: "Pressure",       min: 0, max: 1000, units: '', colour: '#80fb8f'};//80fb8f //9eff86
     var Electrode =     {value: 0,                  name: "Electrode",      min: 0, max: 2000, units: '', colour: '#63e7ff'};//6fb6ff //63e7ff
     var Electromagnet = {value: 0,                  name: "Electromagnet",  min: 0, max: 200 , units: '', colour: '#ffac8a'};//ff7575 //ffac8a
-    var MoveElectrode = {value: 0.5, valueRead: 0.5,name: "MoveElectrode",  min: 0.5, max: 4.0 , units: '', colour: '#ffac8a'};//ff7575 //ffac8a
+    var MoveElectrode = {value: 0, valueRead: 0.5,name: "MoveElectrode",  min: 0, max: 4.5 , units: '', colour: '#ffac8a'};//ff7575 //ffac8a
     var realElectrode = {value: 76,                 name: "realElectrode",  min: 0.5, max: 76 , units: '', colour: '#ffac8a'};//ff7575 //ffac8a
     var MoveHC =        {value: 0.5, valueRead: 0.5,name: "MoveHC",         min: 0.5, max: 4.0 ,   units: '', colour: '#ffac8a'};//ff7575 //ffac8a
     var realHC =        {value: 5,                  name: "realHC",         min: 0.5, max: 50 ,  units: '', colour: '#ffac8a'};//ff7575 //ffac8a
@@ -131,8 +131,8 @@ if ($fgmembersite->CheckValidUser()) {
     CTRLS   = [{x: 10, y:30, w: 300, h: 60, text: 'Pressure (mTorr):', incr: 'true', comm: 'bi', style:"2", op:0.6, bg: "#dfdfdf", axis: 'log'}, //bg;
                {x: 330, y:30, w: 300, h: 60, text: 'Electromagnet (Gauss):',     incr: 'true', comm: 'mono', style:"2", op:0.6, bg: "#dfdfdf", axis: 'linear'},
                {x: 10, y:320, w: 500, h: 60, text: 'Electrode Voltage (Volts):', incr: 'true', comm: 'mono', style:"2", op:0.6, bg: "#dfdfdf", axis: 'linear'},
-               {x: 85, y:172, w: 420, text: 'Electrode Position (cm):'},
-               {x: 80, y:120, w: 470, text: 'Electromagnet Position (cm):'},
+               {x: 100, y:172, w: 420, text: 'Electrode Position (cm):'},
+               {x: 80, y:120, w: 370, text: 'Electromagnet Position (cm):'},
                {x: 530, y:320, w: 100, h: 75, text: 'Lights', style:"1"}];
 
     var time = 0;
@@ -215,7 +215,7 @@ if ($fgmembersite->CheckValidUser()) {
     //WHAT TO DO WITH THE LOADED IMAGES
     function draw(images) {
         var rgdxMagnet = new Konva.Image({
-            x: CTRLS[4].x,
+            x: CTRLS[4].x+(CTRLS[4].w)/3,
             y: CTRLS[4].y,
             image: images.magnet,
             width: 56,
@@ -237,7 +237,7 @@ if ($fgmembersite->CheckValidUser()) {
         rgdxMagnet.cache();
         rgdxMagnet.filters([Konva.Filters.Brighten]);
         var rgdxMagnet_shadow = new Konva.Image({
-            x: CTRLS[4].x,
+            x: CTRLS[4].x+(CTRLS[4].w)/3,
             y: CTRLS[4].y,
             image: images.magnet,
             width: 56,
@@ -381,8 +381,8 @@ if ($fgmembersite->CheckValidUser()) {
             id: 'electrode',
         });
         var electrode_shadow = new Konva.Rect({
-            x: 500,
-            y: 172,
+            x: CTRLS[3].x+(CTRLS[3].w)/2,
+            y: CTRLS[3].y,
             width: 10,
             height: 90,
             offset: {x: 5, y: 45},
@@ -424,10 +424,10 @@ if ($fgmembersite->CheckValidUser()) {
               this.stroke("#9d9d9d");
             });
             electrode.on('dragmove', function() {
-                var electrode_x = 0.5 + (350 - (this.x() - 150))/350*4;
+                var electrode_x = MoveElectrode.min + (CTRLS[3].w - (this.x() - CTRLS[3].x))/CTRLS[3].w*(MoveElectrode.max - MoveElectrode.min);
                 // console.log('write electrode: ' + electrode_x);
-                if (electrode_x > 4) electrode_x = 4;
-                if (electrode_x < 0.5) electrode_x = 0.5;
+                if (electrode_x > MoveElectrode.max) electrode_x = MoveElectrode.max;
+                if (electrode_x < MoveElectrode.min) electrode_x = MoveElectrode.min;
                 MoveElectrode.value = electrode_x;
             });
         }
@@ -666,9 +666,11 @@ if ($fgmembersite->CheckValidUser()) {
                 var magnet_x = 130 + (MoveHC.valueRead - 0.5)/4*320;
                 if (magnet_x < 130) magnet_x = 130;
                 if (magnet_x > 450) magnet_x = 450;
-                var electrode_x = 150 + 350 - (MoveElectrode.valueRead - 0.5)/4*350;
-                if (electrode_x < 150) electrode_x = 150;
-                if (electrode_x > 500) electrode_x = 500;
+                var elecVoltIn = 3.945;
+                var elecVoltOut = 0.37;
+                var electrode_x = CTRLS[3].x + CTRLS[3].w - (MoveElectrode.valueRead - elecVoltOut)/(elecVoltIn - elecVoltOut) *CTRLS[3].w;
+                if (electrode_x < CTRLS[3].x) electrode_x = CTRLS[3].x;
+                if (electrode_x > CTRLS[3].x + CTRLS[3].w) electrode_x = CTRLS[3].x + CTRLS[3].w;
                 motionLayer.find('#electrodeShadow').setX(electrode_x);
                 motionLayer.find('#rgdxMagnetShadow').setX(magnet_x);
                 controlsDynamicLayer.find('#sliderPressureProgress').setWidth(Math.round(pressOut*150/(1000-0)));

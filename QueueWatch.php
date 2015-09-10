@@ -14,7 +14,7 @@
 		);
         $fgmembersite->ChangeAccessKey();
         $AccessKey = $fgmembersite->GetAccessKey();
-        $url = "http://scied-web.pppl.gov:8080/RGDX_Service/RGDX_control/0/0/40/1/0.5/0.5/" . $AccessKey;
+        $url = "http://scied-web.pppl.gov:8080/RGDX_Service/RGDX_control/0/0/40/1/0.0/0.5/" . $AccessKey;
         // url=("http://scied-web.pppl.gov:8080/rgdx_service/rgdx_control/"+Electrode.value+"/"+Electromagnet.value+"/"+Pressure.value+"/"+lights.value+"/"+MoveElectrode.value+"/"+MoveHC.value+"/"+AccessKey.value);
 
         // $url = "http://scied-web.pppl.gov:8080/RGDX_Service/RGDX_control/0/0/40/1/0.5/0";

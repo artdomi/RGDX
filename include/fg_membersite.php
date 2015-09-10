@@ -20,7 +20,7 @@ http://www.html-form-guide.com/php-form/php-login-form.html
 */
 require_once("./include/class.phpmailer.php");
 require_once("./include/formvalidator.php");
-define("TIME_OUT", 300);    //SESSION LENGTH
+define("TIME_OUT", 3600);    //SESSION LENGTH
 define("PULSE_FREQ", 15);   //MAXIMUM TIMEOUT BETWEEN PULSES
 define("PULSE_LIVES", 1);   //NUMBER OF PULSES NEGLECTED AT THE START
 class FGMembersite
