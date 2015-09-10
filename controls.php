@@ -671,7 +671,7 @@ if ($fgmembersite->CheckValidUser()) {
                 var electrode_x = CTRLS[3].x + CTRLS[3].w - (MoveElectrode.valueRead - elecVoltOut)/(elecVoltIn - elecVoltOut) *CTRLS[3].w;
                 if (electrode_x < CTRLS[3].x) electrode_x = CTRLS[3].x;
                 if (electrode_x > CTRLS[3].x + CTRLS[3].w) electrode_x = CTRLS[3].x + CTRLS[3].w;
-                realElectrode.value = realElectrode.max + (electrode_x - MoveElectrode.min) / (MoveElectrode.max - MoveElectrode.min) * (realElectrode.min -realElectrode.max);
+                realElectrode.value = realElectrode.max + (MoveElectrode.valueRead - MoveElectrode.min) / (MoveElectrode.max - MoveElectrode.min) * (realElectrode.min -realElectrode.max);
                 motionLayer.find('#electrodeShadow').setX(electrode_x);
                 motionLayer.find('#rgdxMagnetShadow').setX(magnet_x);
                 controlsDynamicLayer.find('#sliderPressureProgress').setWidth(Math.round(pressOut*150/(1000-0)));
