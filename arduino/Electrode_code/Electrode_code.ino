@@ -124,7 +124,7 @@ void loop() {
     Vall = Vone - Vtwo - 4;
     
     Vb= Vone -11;
-    Vs= Vtwo +2;
+    Vs= Vtwo +4;
     
    currentSpeed=400;
     
@@ -142,7 +142,7 @@ void loop() {
   q=Signal;
   Move=SumPosP/100;
   
-  RealSignal= (float)(Vs + (q-100.00)*(Vb-Vs)*(1.227e-3)); // 0.504, 100 and 4.502, 915
+  RealSignal= (float)(Vs + (q)*(Vb-Vs)*(1.092e-3)); // 0.504, 000 and 4.502, 915
   
     if (y == 0){
     SignalChange= RealSignal;
