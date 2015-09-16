@@ -680,7 +680,7 @@ if ($fgmembersite->CheckValidUser()) {
 
                 var plasmaopacity = Photodiode.value/10;
                 if (plasmaopacity > 1) plasmaopacity = 1;
-                lightUpPlasma = Photodiode.value > 7 && lights.value == 0
+                lightUpPlasma = Photodiode.value > 0.5 && lights.value == 0
                 videoLayer.find('#plasma').opacity( (lightUpPlasma ? plasmaopacity : 0));
                 // alert(lightUpPlasma)
                 if (lightUpPlasma) {
