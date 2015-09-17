@@ -109,7 +109,7 @@ $paschenTest = 4545;
 //==============================================================================
 
     //EXPERIMENT VARIABLES
-    var Pressure =      {value: 10, valueRead: 0,    name: "Pressure",       min: 0, max: 1000, units: '', colour: '#80fb8f'};//80fb8f //9eff86
+    var Pressure =      {value: 10, valueRead: 0,    name: "Pressure",       min: 10, max: 1000, units: '', colour: '#80fb8f'};//80fb8f //9eff86
     var Electrode =     {value: 0,                  name: "Electrode",      min: 0, max: 2000, units: '', colour: '#63e7ff'};//6fb6ff //63e7ff
     var Electromagnet = {value: 0,                  name: "Electromagnet",  min: 0, max: 200 , units: '', colour: '#ffac8a'};//ff7575 //ffac8a
     var MoveElectrode = {value: 0, valueRead: 0.5,name: "MoveElectrode",  min: 0, max: 4.5 , units: '', colour: '#ffac8a'};//ff7575 //ffac8a
