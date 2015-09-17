@@ -14,7 +14,9 @@ if ($fgmembersite->CheckValidUser()) {
     }
 // if ($fgmembersite->UserInQueue()) {
 }
-$paschenTest = 4545;
+$_SESSION['paschenArray'] = array(
+    array ("Voltage", "Distance", "Pressure")
+    );
 ?>
 <!DOCTYPE HTML>
 <html lang="en">

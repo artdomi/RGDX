@@ -1,11 +1,6 @@
 <?PHP
     session_start();
-    require_once("../include/membersite_config.php");
-    $fgmembersite->DBLogin();
-    // $fgmembersite->ReorderPositions();  //MOVE QUEUE FORWARD IF MIN(POS)>1, SET TIME_ELAPSED TO NOW() FOR POS=1
-    $fgmembersite->CheckTimer();    //CHECK REMAINING TIME OF THE 1'ST POS - FORCE KICKOUT AUTHORIZED
-    $fgmembersite->CheckPulse();    //CHECK PULSE OF THE 1'ST USER - FORCE KICKOUT AUTHORIZED
-
+    
     ?>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
@@ -144,7 +139,13 @@
 		<script type="text/javascript">
 			$(document).ready(function(){
 		        // var chart = $('#container').highcharts();
-			    alert(<?php echo $_SESSION['$paschenTest']; ?>);
+		        //alert("hello");
+			    //alert(<?php echo $_SESSION['$paschenTest']; ?>);
+			    <?PHP
+			    $sesid = session_id();
+				echo 'alert("'.$_SESSION['paschenArray'][0][0].'");';
+				?>
+			});
 		</script>
 
 
