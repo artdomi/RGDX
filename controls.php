@@ -679,8 +679,9 @@ if ($fgmembersite->CheckValidUser()) {
                 $('#sliderPressureReadout').val(pressOut);
 
                 var plasmaopacity = Photodiode.value/10;
+                var photoLimit = 0.5;
                 if (plasmaopacity > 1) plasmaopacity = 1;
-                lightUpPlasma = Photodiode.value > 0.5 && lights.value == 0
+                lightUpPlasma = Photodiode.value > photoLimit && lights.value == 0
                 videoLayer.find('#plasma').opacity( (lightUpPlasma ? plasmaopacity : 0));
                 // alert(lightUpPlasma)
                 if (lightUpPlasma) {
@@ -690,7 +691,7 @@ if ($fgmembersite->CheckValidUser()) {
                     }
                 } else justOnce = false;
                 console.log(Photodiode.value);
-                videoLayer.find('#rgdxLive').fill( (Photodiode.value > 10 ? 'pink' : 'white'));
+                videoLayer.find('#rgdxLive').fill( (Photodiode.value > photoLimit ? 'pink' : 'white'));
                 videoLayer.batchDraw();
                 // controlsDynamicLayer.find('#sliderPressureReadout').setText(((pressOut >= 100) ? pressOut.toFixed(0) : pressOut.toFixed(1)));
 
