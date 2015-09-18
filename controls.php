@@ -14,6 +14,7 @@ if ($fgmembersite->CheckValidUser()) {
     }
 // if ($fgmembersite->UserInQueue()) {
 }
+$paschenTest = 4545;
 ?>
 <!DOCTYPE HTML>
 <html lang="en">
