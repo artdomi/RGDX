@@ -122,6 +122,7 @@ $_SESSION['paschenArray'] = array(
 
 
     var lights = {value: 1, name: "Lights", colour: "#f9ff45"};
+    var submit = {value: 0, name: "Submit", colour: "#f9ff45"};
     // var AccessKey = {value: 1234, name: "AccessKey"};
     var AccessKey = {value: <?PHP echo $AccessKey;?>};
     var AccessAuth = {value: 0, name: "AccessAuth"};
@@ -136,7 +137,8 @@ $_SESSION['paschenArray'] = array(
                {x: 10, y:320, w: 500, h: 60, text: 'Electrode Voltage (Volts):', incr: 'true', comm: 'mono', style:"2", op:0.6, bg: "#dfdfdf", axis: 'linear'},
                {x: 100, y:172, w: 420, text: 'Electrode Position (cm):'},
                {x: 80, y:120, w: 370, text: 'Electromagnet Position (cm):'},
-               {x: 530, y:320, w: 100, h: 75, text: 'Lights', style:"1"}];
+               {x: 530, y:320, w: 100, h: 55, text: 'Lights', style:"1"}];
+               {x: 530, y:220, w: 100, h: 75, text: 'Submit', style:"1"}];
 
     var time = 0;
     var framerate = 100; // in ms, movement every N ms
@@ -526,7 +528,20 @@ $_SESSION['paschenArray'] = array(
                         break;
         }
         videoLayer.batchDraw();
+    }
 
+    function updateSubmit(){
+        updateMotion();
+
+        var allSubmit = stage.find('.Submit');
+        // console.log(lights.value);
+        switch(Submit.value) {
+            case 1:     allSubmit.fill('#e8ed64');
+                        break;
+            case 0:     allSubmit.fill('#363636');
+                        break;
+        }
+        videoLayer.batchDraw();
     }
 
 //==============================================================================
@@ -542,6 +557,10 @@ $_SESSION['paschenArray'] = array(
         // Slider(realHC,        updateMotion, CTRLS[4], controlsStaticLayer, controlsDynamicLayer, "controls");
 
         Button(lights, updateLights, CTRLS[5], buttonStaticLayer);
+
+        if (Superuser.value == 1) {
+            Button(submit, updateSubmit, CTRLS[6], buttonStaticLayer);
+            });
 
     }
 
